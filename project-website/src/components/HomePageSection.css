@@ -1,0 +1,28 @@
+.HomePageSection {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+}
+
+.Section {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    padding: 0vmin 3vmin 0vmin 3vmin
+}
+
+.Section-Content {
+    align-items: center;
+    text-align: left;
+    padding: 0vmin 3vmin 0vmin 1vmin;
+    margin-left: 3vmin;
+    font-size: calc(5px + 1vmin);
+}
+
+.Section-Header {
+    align-items: center;
+    padding: 0vmin 3vmin 0vmin 1vmin;
+    font-size: calc(8px + 1.5vmin);
+}

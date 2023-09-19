@@ -1,0 +1,13 @@
+.HomePage-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    justify-content: left;
+    color: white;
+}
+
+.HomePage {
+    text-align: center;
+}
