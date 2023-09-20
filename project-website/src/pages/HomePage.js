@@ -5,7 +5,7 @@ function HomePage() {
   return (
     <div className="HomePage">
         <header className="HomePage-header">
-            <HomePageSection name="Team" content="..."/>
+            <HomePageSection name="Team" content=""/>
             <HomePageSection name="Project" content="..."/>
             <HomePageSection name="Sponsor" content="..."/>
             <HomePageSection name="Coach" content="..."/>
