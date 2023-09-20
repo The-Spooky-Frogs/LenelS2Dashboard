@@ -1,0 +1,31 @@
+[
+    {
+        "week": 3,
+        "individuals": {
+            "andreas": {
+                "fileName": "Andreas-Week3",
+                "filePath": "./timeTracking/week3/Andreas.pdf"
+            },
+            "dominique": {
+                "fileName": "Dominique-Week3",
+                "filePath": "./timeTracking/week3/Dominique.pdf"
+            },
+            "ethan":  {
+                "fileName": "Ethan-Week3",
+                "filePath": "./timeTracking/week3/Ethan.pdf"
+            },
+            "peter": {
+                "fileName": "Peter-Week3",
+                "filePath": "./timeTracking/week3/Peter.pdf"
+            },
+            "skyler": {
+                "fileName": "Skyler-Week3",
+                "filePath": "./timeTracking/week3/Skyler.pdf"
+            }
+        },
+        "team": {
+            "fileName": "Team-Week3",
+            "filePath": "./timeTracking/week3/Team.pdf"
+        }
+    }
+]

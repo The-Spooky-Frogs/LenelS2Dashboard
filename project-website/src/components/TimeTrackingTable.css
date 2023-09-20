@@ -1,0 +1,21 @@
+.TimeTrackingTable {
+    width: 200vh;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+ 
+table {
+    border: 2px solid black;
+    width: 1000px;
+    height: 100px;
+}
+ 
+th {
+    border-bottom: 1px solid black;
+}
+ 
+td {
+    text-align: center;
+}
