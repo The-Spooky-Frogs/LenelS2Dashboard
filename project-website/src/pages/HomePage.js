@@ -1,6 +1,7 @@
 import './HomePage.css';
 import HomePageSection from '../components/HomePageSection.js';
 import TeamCardGroup from '../components/TeamCardGroup';
+import TimeTrackingTable from '../components/TimeTrackingTable';
 
 function HomePage() {
   return (
@@ -22,7 +23,9 @@ function HomePage() {
             <HomePageSection name="Synopsis" content="The goal of this project is to create a ''single pane of glass'' to function as a monitoring system for the multiple cloud platforms used by LenelS2’s Elements, OnGuard Cloud, and Brokerbay programs."/>
 
             {/* Time Tracking */}
-            <HomePageSection name="Time Tracking" content=""/>
+            <HomePageSection name="Time Tracking" content="">
+              <TimeTrackingTable/>
+            </HomePageSection>
 
             {/* Future Deliverables */}
             <HomePageSection name="Future Deliverables" content="..."/>
