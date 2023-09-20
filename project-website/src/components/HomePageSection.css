@@ -14,7 +14,7 @@
 }
 
 .Section-Content {
-    align-items: center;
+    align-items: left;
     text-align: left;
     padding: 0vmin 3vmin 0vmin 1vmin;
     margin-left: 3vmin;
@@ -22,7 +22,8 @@
 }
 
 .Section-Header {
-    align-items: center;
+    align-items: left;
+    text-align: left;
     padding: 0vmin 3vmin 0vmin 1vmin;
     font-size: calc(8px + 1.5vmin);
 }

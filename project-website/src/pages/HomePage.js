@@ -6,14 +6,27 @@ function HomePage() {
   return (
     <div className="HomePage">
         <header className="HomePage-header">
+
+            {/* Over view */}
             <HomePageSection name="Team" content="Spooky Frogs"/>
-            <HomePageSection name="Project" content="Multi-Cloud Monitoring Dashboard"/>
+            <HomePageSection name="Project" content="LenelS2 - Multi-Cloud Monitoring Dashboard"/>
             <HomePageSection name="Sponsor" content="LenelS2"/>
-            <HomePageSection name="Coach" content="..."/>
+            <HomePageSection name="Coach" content="Warren Tessier"/>
+
+            {/* Team Members */}
             <HomePageSection name="Team Members" >
               <TeamCardGroup/>
             </HomePageSection>
-            <HomePageSection name="Synopsis" content="..."/>
+            
+            {/* Synopsis */}
+            <HomePageSection name="Synopsis" content="The goal of this project is to create a ''single pane of glass'' to function as a monitoring system for the multiple cloud platforms used by LenelS2’s Elements, OnGuard Cloud, and Brokerbay programs."/>
+
+            {/* Time Tracking */}
+            <HomePageSection name="Time Tracking" content=""/>
+
+            {/* Future Deliverables */}
+            <HomePageSection name="Future Deliverables" content="..."/>
+            
         </header>
     </div>
   );
