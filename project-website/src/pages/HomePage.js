@@ -1,10 +1,12 @@
 import './HomePage.css';
 import HomePageSection from '../components/HomePageSection.js';
+import TeamCardGroup from '../components/TeamCardGroup';
 
 function HomePage() {
   return (
     <div className="HomePage">
         <header className="HomePage-header">
+
             {/* Over view */}
             <HomePageSection name="Team" content="Spooky Frogs"/>
             <HomePageSection name="Project" content="LenelS2 - Multi-Cloud Monitoring Dashboard"/>
@@ -12,11 +14,9 @@ function HomePage() {
             <HomePageSection name="Coach" content="Warren Tessier"/>
 
             {/* Team Members */}
-            <HomePageSection name="Team Members" content="Andreas Leonard-Calcano --- Tech Lead, DevOps, System Architect"/>
-            <HomePageSection name="" content="Dominique Smith-Rodrique --- Design Specialist (Ui/UX)"/>
-            <HomePageSection name="" content="Ethan Hower --- Documentation Master"/>
-            <HomePageSection name="" content="Peter Cesmegi --- Frontend Lead, Database Master"/>
-            <HomePageSection name="" content="Skyler Herman --- Sponsor Communication Lead, Scribe, Scrum Master/Project Manager"/>
+            <HomePageSection name="Team Members" >
+              <TeamCardGroup/>
+            </HomePageSection>
             
             {/* Synopsis */}
             <HomePageSection name="Synopsis" content="The goal of this project is to create a ''single pane of glass'' to function as a monitoring system for the multiple cloud platforms used by LenelS2’s Elements, OnGuard Cloud, and Brokerbay programs."/>
@@ -27,7 +27,6 @@ function HomePage() {
             {/* Future Deliverables */}
             <HomePageSection name="Future Deliverables" content="..."/>
             
-
         </header>
     </div>
   );
