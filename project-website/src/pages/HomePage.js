@@ -23,7 +23,6 @@ function HomePage() {
 
             {/* Time Tracking */}
             <HomePageSection name="Time Tracking" content=""/>
-            <img filepath="week3/PeterCesmegi-Week-Time.pdf" alt="Week Time Tracking (Peter Cesmegi)" />
 
             {/* Future Deliverables */}
             <HomePageSection name="Future Deliverables" content="..."/>
