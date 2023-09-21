@@ -20,7 +20,7 @@ function HomePage() {
             </HomePageSection>
             
             {/* Synopsis */}
-            <HomePageSection name="Synopsis" content="The goal of this project is to create a ''single pane of glass'' to function as a monitoring system for the multiple cloud platforms used by LenelS2’s Elements, OnGuard Cloud, and Brokerbay programs."/>
+            <HomePageSection name="Synopsis" content="The goal of this project is to create a ''single pane of glass'' dashboard. It will interface with the multiple cloud platforms used by LenelS2’s Elements, OnGuard Cloud, and Brokerbay programs. It will serve as a tool with an intuitive UI that is easy to maintain and easy to understand. This dashboard will be used by digital teams, so it will help provide insight into information. In the web application, there will be multiple different pages for different types of analytics such as performance data. There will be charts that show trends and information as well."/>
 
             {/* Time Tracking */}
             <HomePageSection name="Time Tracking" content="">
