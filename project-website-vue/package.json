@@ -8,9 +8,14 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@coreui/coreui": "^4.3.0",
+    "@coreui/vue": "^4.10.1",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.2",
     "core-js": "^3.8.3",
     "vue": "^3.2.13",
-    "vue-router": "^4.0.3"
+    "vue-router": "^4.0.3",
+    "vue-strap": "^1.1.40"
   },
   "devDependencies": {
     "@babel/core": "^7.12.16",
