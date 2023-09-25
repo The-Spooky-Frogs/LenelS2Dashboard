@@ -1,8 +1,10 @@
 <template>
-    <div className="Section-Component">
-        <p className="Section-Component-Header"> {{ name }} </p>  
-        <p className="Section-Component-Content"> {{ content }} </p>
-    </div>  
+    <div class="Section-Component">
+        <h5 v-if="hasName" class="Section-Component-Header">{{ name }}</h5>
+        <div v-if="hasContent" class="card">
+            <p class="Section-Component-Content">{{ content }}</p>
+        </div>
+    </div>
 </template>
   
 <script>
@@ -11,7 +13,16 @@
     props: {
         name: String,
         content: String
+    },
+    computed: {
+        hasContent() {
+            return !!this.content
+        },
+        hasName() {
+            return !!this.name
+        }
     }
+
   }
 </script>
   
@@ -19,25 +30,24 @@
     .Section-Component {
         display: flex;
         flex-direction: column;
-        align-items: left;
-        justify-content: left;
-        padding: 0vmin 3vmin;
-        margin: 0px;
+        align-items: center;
+        justify-content: center;
+        padding: 0vmin 1vmin;
+        margin: 5vw 5vh;
     }
 
     .Section-Component-Content {
-        align-items: left;
+        align-items: center;
         text-align: left;
-        padding: 0vmin 3vmin 0vmin 1vmin;
-        margin-left: 3vmin;
+        padding: 1vmin 3vmin 0vmin 3vmin;
         font-size: calc(5px + 1vmin);
     }
 
     .Section-Component-Header {
-        align-items: left;
-        text-align: left;
-        padding: 0vmin 3vmin 0vmin 1vmin;
-        font-size: calc(8px + 1.5vmin);
+        align-items: center;
+        text-align: center;
+        padding: 0vmin 3vmin 0vmin 3vmin;
+        font-size: calc(10px + 2vmin);
     }
 </style>
   

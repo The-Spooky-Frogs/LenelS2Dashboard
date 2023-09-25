@@ -1,41 +1,27 @@
 <template>
-    <div class="card-group">
-        <SectionComponent name="Team Members"/>
-        <CContainer fluid>
-            <CRow>
-                <CCol v-for="(item) in items" :key="item">
-                    <CCard class="card">
-                    <CCardImage orientation="top" src="https://picsum.photos/318/180" alt="Card image cap" />
-                    <CCardBody>
-                        <CCardTitle> {{ item.name }}</CCardTitle>
-                        <CCardText v-for="(role) in item.roles" :key="role" class="card-text">
-                            - {{ role }}
-                        </CCardText>
-                    </CCardBody>
-                    </CCard>
-                </CCol>
-            </CRow>
-        </CContainer>
+    <div>
+        <div class="row justify-content-center">
+            <div v-for="(item) in items" :key="item" class="card-col col-2">
+                <div class="card">
+                    <img src="https://picsum.photos/318/180" alt="Card image cap" class="card-img-top" />
+                    <div class="card-body">
+                        <h5 class="card-header"> {{ item.name }}</h5>
+                        <div class="card-text">
+                            <p class="card-text d-flex" v-for="(role) in item.roles" :key="role">
+                                - {{ role }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
   
 <script>  
-  import { CContainer, CRow, CCol, CCard, CCardImage, CCardTitle, CCardBody, CCardText} from '@coreui/vue';
-  import SectionComponent from '@/components/SectionComponent.vue'
 
   export default {
     name: 'TeamCardGroup',
-    components: {
-        SectionComponent,
-        CContainer,
-        CRow,
-        CCol,
-        CCard,
-        CCardTitle,
-        CCardImage,
-        CCardBody,
-        CCardText
-    },
     data() {
         return {
             items: []
@@ -82,21 +68,28 @@
   
 <style>
 
-.card-group {
+.card-col {
+    height: 100%;
+}
+
+.card-container {
     justify-content: left;
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    height: 50vh;
 }
-.card {
-    height: 100%;
+
+.card-header {
+    min-height: 7vh;
 }
+
+.card-body {
+    height: 30vh
+}
+
 .card-text {
     text-align: left;
-    font-weight: bold;
-    font-size: 14px;
-    margin: 0;
+    padding-top: 1vh;
 }
 </style>
   
