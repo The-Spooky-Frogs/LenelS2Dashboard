@@ -1,0 +1,38 @@
+name: Website-deploy-to-vps
+on:
+   push:
+        branches:
+            - dev
+jobs:
+    run_build: 
+        runs-on: ubuntu-latest
+        strategy:
+            matrix:
+              node-version: [18.x]
+              # See supported Node.js release schedule at https://nodejs.org/en/about/releases
+        steps:
+            - uses: actions/checkout@v3
+            - name: Use Node.js ${{ matrix.node-version }}
+              uses: actions/setup-node@v3
+              with:
+                node-version: ${{ matrix.node-version }}
+                cache: "npm"
+            - run: cd project-website
+            - run: npm i --legacy-peer-deps
+            - run: npm run build --if-present
+    run_client_deploy:
+        needs: run_server_deploy
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+            - name: clone repository to deploy action
+            uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
+          - run: 
+    
+            
+            
+        
+    
