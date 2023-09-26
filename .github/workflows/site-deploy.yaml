@@ -15,6 +15,7 @@ jobs:
             - uses: actions/setup-node@v3
               with:
                 node-version: ${{ matrix.node-version }}
+                cache-dependency-path: /project-website/package-lock.json
             - run: cd project-website
             - run: npm i
             - run: npm run build --if-present
@@ -27,7 +28,7 @@ jobs:
           uses: actions/setup-node@v3
           with:
             node-version: ${{ matrix.node-version }}
-            cache-dependency-path: LenelS2Dashboard/project-website/package-lock.json
+            cache-dependency-path: /project-website/package-lock.json
             cache: "npm"
         - run: |
             cd project-website
