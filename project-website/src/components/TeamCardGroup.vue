@@ -81,15 +81,17 @@
 
 .card-header {
     min-height: 7vh;
+    font-size: medium;
 }
 
 .card-body {
-    height: 30vh
+    height: 30vh;
+    font-size: small;
 }
 
 .card-text {
     text-align: left;
-    padding-top: 1vh;
+    padding-top: 0.2vh;
 }
 </style>
   
