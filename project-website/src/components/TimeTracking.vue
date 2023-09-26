@@ -81,7 +81,7 @@
     }
     .time-table {
         padding: 0vh 5vh;
-        width: 60%;
+        width: 70%;
         margin-bottom: 100px;
     }
     
