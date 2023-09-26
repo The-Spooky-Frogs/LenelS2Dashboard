@@ -12,14 +12,11 @@ jobs:
               # See supported Node.js release schedule at https://nodejs.org/en/about/releases
         steps:
             - uses: actions/checkout@v3
-            - name: Use Node.js ${{ matrix.node-version }}
-              uses: actions/setup-node@v3
+            - uses: actions/setup-node@v3
               with:
                 node-version: ${{ matrix.node-version }}
-                cache-dependency-path: LenelS2Dashboard/project-website/package-lock.json
-                cache: "npm"
             - run: cd project-website
-            - run: npm i --legacy-peer-deps
+            - run: npm i
             - run: npm run build --if-present
     run_client_deploy:
       needs: run_build
