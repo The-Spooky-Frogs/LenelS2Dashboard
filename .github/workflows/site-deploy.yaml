@@ -21,18 +21,62 @@ jobs:
             - run: npm i --legacy-peer-deps
             - run: npm run build --if-present
     run_client_deploy:
-        needs: run_build
-        runs-on: ubuntu-latest
-        steps:
-            - uses: actions/checkout@v3
-            - name: clone repository to deploy action
-            uses: actions/setup-node@v3
-            with:
-              node-version: ${{ matrix.node-version }}
-              cache: "npm"
-            - run: cd project-website
-            - run: npm i --legacy-peer-deps
-            - run: npm run build --if-present
+      needs: run_build
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: clone repository to deploy action
+          uses: actions/setup-node@v3
+          with:
+            node-version: ${{ matrix.node-version }}
+            cache: "npm"
+        - run: |
+            cd project-website
+            npm run build --verbose
+        - name: delete build and create new
+          uses: appleboy/ssh-action@v1.0.0
+          with:
+            host: ${{ secrets.SSH_STAGING_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            key: ${{ secrets.SSH_STAGING_SECRET }}
+            port: ${{ secrets.PORT }}
+            script: |
+              cd /var/www/html
+              rm -rf dist
+              mkdir build
+        - name: tar build to
+          run: |
+            cp -TR project-website/dist ../dist
+            tar -cvzf deploy.tar.gz ../dist/
+        - name: scp build directory
+          uses: appleboy/scp-action@v0.1.4
+          with:
+            host: ${{ secrets.SSH_STAGING_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            key: ${{ secrets.SSH_STAGING_SECRET }}
+            port: ${{ secrets.PORT }}
+            source: "deploy.tar.gz"
+            target: /var/www/html
+        - name: Unzip build directory
+          uses: appleboy/ssh-action@v1.0.0
+          with:
+            host: ${{ secrets.SSH_STAGING_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            key: ${{ secrets.SSH_STAGING_SECRET }}
+            port: ${{ secrets.PORT }}
+            script: |
+              cd /var/www/html
+              tar -xvzf deploy.tar.gz
+        - name: delete zipDeploy directory
+          uses: appleboy/ssh-action@v1.0.0
+          with:
+            host: ${{ secrets.SSH_STAGING_HOST }}
+            username: ${{ secrets.SSH_USER }}
+            key: ${{ secrets.SSH_STAGING_SECRET }}
+            port: ${{ secrets.PORT }}
+            script: |
+              cd ${{ secrets.CD_CLIENT }}
+              rm deploy.tar.gz
 
     
             
