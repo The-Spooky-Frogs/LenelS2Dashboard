@@ -6,6 +6,9 @@ on:
 jobs:
     run_build: 
         runs-on: ubuntu-latest
+        defaults:
+          run:
+            working-directory: 'project-website'
         strategy:
             matrix:
               node-version: [18.x]
@@ -24,6 +27,9 @@ jobs:
     run_client_deploy:
       needs: run_build
       runs-on: ubuntu-latest
+      defaults:
+        run:
+          working-directory: 'project-website'
       steps:
         - uses: actions/checkout@v3
         - name: clone repository to deploy action
