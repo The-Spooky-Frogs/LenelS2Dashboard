@@ -1,0 +1,17 @@
+@import '~mdb-ui-kit/css/mdb.min.css';
+
+.page {
+    background-color: #282c34;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    height: 100%;
+    justify-content: left;
+    width: 100%;
+    color: white;
+    min-height: 91.75vh;
+}
+
+.header-break {
+    margin-bottom: 20px;
+  }
