@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         node-version:
-          - 16.x
+          - 18.x
     steps:
       - name: checkout
         uses: actions/checkout@v4
@@ -31,14 +31,18 @@ jobs:
         node-version:
           - 18.x
      steps:
-        - run: cd project-website
+        - name: checkout
+          uses: actions/checkout@v4
+          with:
+            ref: dev 
         - name: Setup Node.js environment
           uses: actions/setup-node@v3.8.1
           with:
             node-version: '${{ matrix.node-version}}'
             cache: npm
-        - run: npm i
-        - run: npm run build
+        - run: |
+              npm i
+              npm run build
         - name: delete build and create new
           uses: appleboy/ssh-action@v1.0.0
           with:
@@ -52,7 +56,8 @@ jobs:
              mkdir dist
            run: |
              cp -TR project-website/dist ../dist
-             tar -cvzf deploy.tar.gz ../dist/
+             cp -TR project-website/website-files ../files
+             tar -cvzf deploy.tar.gz ../dist/ ../files
         - name: delete build and create new
           uses: appleboy/scp-action@v0.1.4
           with:
