@@ -11,7 +11,7 @@ jobs:
         node-version:
           - 18.x
     steps:
-      - run: cd LenelS2Dashboard/project-website
+      - run: cd ./LenelS2Dashboard/project-website
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.8.1
         with:
