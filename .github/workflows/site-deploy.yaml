@@ -11,14 +11,15 @@ jobs:
         node-version:
           - 18.x
     steps:
-      - run: cd project-website
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.8.1
         with:
           node-version: '${{ matrix.node-version}}'
           cache: npm
-      - run: npm i
-      - run: npm run build
+      - run: |
+            cd project-website
+            npm i
+            npm run build
   run_client_deploy:
      runs-on: ubuntu-latest
      needs: run_build
