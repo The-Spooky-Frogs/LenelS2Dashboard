@@ -16,7 +16,6 @@ jobs:
         with:
           node-version: '${{ matrix.node-version}}'
           cache: npm
-          cache-dependency-path: LenelS2Dashboard/project-website
       - run: |
             cd LenelS2Dashboard/project-website
             npm i
