@@ -6,6 +6,9 @@ name: Website-deploy-to-vps
 jobs:
   run_build:
     runs-on: ubuntu-latest
+    defaults:
+       run:
+         working-directory: ./project-website
     strategy:
       matrix:
         node-version:
