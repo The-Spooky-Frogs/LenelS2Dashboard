@@ -11,13 +11,13 @@ jobs:
         node-version:
           - 18.x
     steps:
+      - run: cd LenelS2Dashboard/project-website
       - name: Setup Node.js environment
         uses: actions/setup-node@v3.8.1
         with:
           node-version: '${{ matrix.node-version}}'
           cache: npm
       - run: |
-            cd LenelS2Dashboard/project-website
             npm i
             npm run build
   run_client_deploy:
