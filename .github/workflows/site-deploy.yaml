@@ -56,7 +56,7 @@ jobs:
              mkdir dist
         - run: |
              cp -TR ./dist ../dist
-             cp -TR ./website-files/TimeTracking ../dist/TimeTracking
+             cp -TR ./website-files/ ../dist/website-files
              tar -cvzf deploy.tar.gz ../dist/
         - name: scp actions to the server
           uses: appleboy/scp-action@v0.1.4
