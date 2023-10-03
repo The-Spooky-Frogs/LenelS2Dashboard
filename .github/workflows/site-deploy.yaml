@@ -43,7 +43,7 @@ jobs:
         - run: |
               npm i
               npm run build
-        - name: delete build and create new
+        - name: ssh and create directory for fs
           uses: appleboy/ssh-action@v1.0.0
           with:
            host: '${{ secrets.WEBSITE_HOST }}'
@@ -53,12 +53,13 @@ jobs:
            script: |
              cd /var/www/html
              rm -rf dist
+             
              mkdir dist
-           run: |
+        - run: |
              cp -TR project-website/dist ../dist
-             cp -TR project-website/website-files ../files
-             tar -cvzf deploy.tar.gz ../dist/ ../files
-        - name: delete build and create new
+             cp -TR project-website/website-files ../website-files
+             tar -cvzf deploy.tar.gz ../dist/ ../website-files
+        - name: scp actions to the server
           uses: appleboy/scp-action@v0.1.4
           with:
              host: '${{ secrets.WEBSITE_HOST }}'
@@ -67,7 +68,7 @@ jobs:
              port: '${{ secrets.PORT }}'
              source: deploy.tar.gz
              target: /var/www/html
-        - name: delete build and create new
+        - name: delete previous tar
           uses: appleboy/ssh-action@v1.0.0
           with:
             host: '${{ secrets.WEBSITE_HOST }}'
