@@ -12,7 +12,6 @@ jobs:
     steps:
       - run: |
           echo The PR was merged
-jobs:
   run_build:
     runs-on: ubuntu-latest
     strategy:
