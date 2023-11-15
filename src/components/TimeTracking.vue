@@ -15,7 +15,7 @@
                     <td> {{ week.num }}</td>
                     <td> {{ week.range }}</td>
                     <td v-for="individual in individuals" :key="individual">
-                        <a :href="pdfFilePath(week, individual)">
+                        <a :href="pdfFilePath(week.num, individual)">
                             <i class="fa fa-file-text-o"></i>
                             {{ pdfFileName(week.num, individual) }}
                         </a>
@@ -39,15 +39,39 @@
                 },
                 {
                     num: 4,
-                    range: "9/17/2023 - 9/23/2023"
+                    range: "9/16/2023 - 9/24/2023"
                 },
                 {
                     num: 5,
-                    range: "9/24/2023 - 9/30/2023"
+                    range: "9/25/2023 - 10/1/2023"
                 },
                 {
                     num: 6,
-                    range: "10/1/2023 - 10/7/2023"
+                    range: "10/2/2023 - 10/8/2023"
+                },
+                {
+                    num: 7,
+                    range: "10/9/2023 - 10/15/2023"
+                },
+                {
+                    num: 8,
+                    range: "10/16/2023 - 10/22/2023"
+                },
+                {
+                    num: 9,
+                    range: "10/23/2023 - 10/29/2023"
+                },
+                {
+                    num: 10,
+                    range: "10/30/2023 - 11/5/2023"
+                },
+                {
+                    num: 11,
+                    range: "11/5/2023 - 11/12/2023"
+                },
+                {
+                    num: 12,
+                    range: "11/13/2023 - 11/20/2023"
                 }
             ],
             individuals: [
